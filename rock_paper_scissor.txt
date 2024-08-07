@@ -1,0 +1,88 @@
+import random
+
+print("*****Welcome To Rock Paper Scissor Game*****")
+
+user_count=0
+comp_count=0
+Tie=0
+print('''
+Game rulse:
+Rock vs Paper-> Paper Wins
+Rock vs Scissor-> Rock Wins
+Scissor vs Paper-> Scissor Wins
+''')
+choice1 = 0
+while (choice1!=3):
+    print("\n~~Do You Want To Start Game~~")
+    print("1.Yes")
+    print("2.No and Exit the game")
+    choice1=int(input("enter your choice:"))
+    if choice1 == 1:
+
+        choice2 = 0
+        while (choice2 != 4):
+            print("\n********User choice**********")
+            print("1.Rock")
+            print("2.Paper")
+            print("3.Scissor")
+            print("4.back to main")
+
+            choice2 = int(input("enter your choice:"))
+            if choice2 == 1:
+                user_choice="Rock"
+            elif choice2 ==2:
+                user_choice = "Paper"
+            elif choice2 == 3:
+                user_choice = "Scissor"
+            elif choice2 == 4:
+              break
+
+            print("user choice:",user_choice)
+            print()
+            print("now it`s computer turn")
+            computer_choice = random.randint(1,3)
+            if computer_choice == 1:
+                comp_choice == "Rock"
+            elif computer_choice ==2:
+                comp_choice = "Paper"
+            elif computer_choice== 3:
+                comp_choice = "Scissor"
+            print("computer choice:",comp_choice)
+
+            if user_choice=="Rock" and comp_choice=="Paper" or user_choice=="Paper" and comp_choice=="Rock":
+                print("Paper Win")
+                result = "Paper"
+            elif user_choice=="Rock" and comp_choice=="Scissor" or user_choice=="Scissor" and comp_choice=="Rock":
+                print("Rock Win")
+                result = "Rock"
+            elif user_choice==comp_choice:
+                print("it`s Tie")
+                result = "Tie"
+            else:
+                print("Scissor Win")
+                result = "Scissor"
+
+            if result == "Tie":
+                Tie+=1
+            elif result == user_choice:
+                user_count+=1
+            else:
+                comp_count+=1
+
+            print("\n*******Scores are******")
+            print("user score:",user_count)
+            print("computer score:", comp_count)
+            print("Ties:", Tie)
+
+        if user_count<comp_count:
+            print("Computer win the Game")
+        elif user_count>comp_count:
+            print("User win the Game")
+        else:
+            print("It`s Tie,Play Again!")
+
+
+    elif choice1 == 2:
+        break
+
+print("THANK YOU")
