@@ -1,0 +1,18 @@
+#calculator
+print("""+add
+-sub
+*mult
+/div""")
+num1=eval(input("enter num1:"))
+num2=eval(input("enter num2:"))
+opr=input("enter opr:")
+if opr=="+":
+    print(num1+num2)
+if opr=="-":
+    print(num1-num2)
+if opr=="*":
+    print(num1*num2)
+if opr=="/":
+    print(num1/num2)
+if opr!="+" and opr!="-" and opr!="*" and opr!="/" :
+    print("invalid opr...")
