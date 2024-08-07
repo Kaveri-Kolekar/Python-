@@ -1,0 +1,57 @@
+class ToDoList:
+    def __init__(self):
+        self.task = []
+
+    def add_task(self, tasks):
+        self.task.append(tasks)
+
+    def display_task(self):
+        if len(self.task) == 0:
+            print("task is not define,add task")
+        else:
+            for val in self.task:
+                print(val, "\n", end="")
+
+    def update_task(self, index, update_task):
+        if 1 <= index <= len(self.task):
+            self.task[index] = update_task
+        else:
+            print("task is not define at this index position")
+
+    def delete_task(self, i):
+        if 1 <= i <= len(self.task):
+            del self.task[i]
+        else:
+            print("task is not present at that index number,try again! ")
+
+
+# Driver code
+c1 = ToDoList()
+choice1 = 0
+while (choice1 != 6):
+    print("\n********To Do List********")
+    print("\n1.Add Task")
+    print("\n2.Display Task")
+    print("\n3.Update Task")
+    print("\n4.Delete Task")
+    print("\n5.Exit")
+    choice1 = int(input("enter your choice:"))
+
+    if choice1 == 1:
+        num = input("enter your task:")
+        c1.add_task(num)
+
+    elif choice1 == 2:
+        c1.display_task()
+
+    elif choice1 == 3:
+        index = int(input("enter the task index to update task:"))
+        update_task = input("enter your task:")
+        c1.update_task(index, update_task)
+
+    elif choice1 == 4:
+        i = int(input("enter the index to delete task:"))
+        c1.delete_task(i)
+
+    elif choice1 == 5:
+        break
